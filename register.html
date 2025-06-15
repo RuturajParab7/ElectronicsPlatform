@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: #007BFF;
+            padding: 10px 20px;
+            width: 100%;
+            font-size: 18px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .register-container {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-top: 60px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #007BFF;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        p a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Navbar content here -->
+    </nav>
+
+    <div class="register-container">
+        <h2>Register</h2>
+        <form id="registerForm" action="php/register.php" method="POST">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" required>
+            <div id="firstnameError" class="error"></div>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+            <div id="lastnameError" class="error"></div>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <div id="usernameError" class="error"></div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div id="emailError" class="error"></div>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div id="passwordError" class="error"></div>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+            <div id="confirmPasswordError" class="error"></div>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            let valid = true;
+
+            // First Name validation (only alphabets)
+            const firstname = document.getElementById('firstname').value;
+            if (!/^[a-zA-Z]+$/.test(firstname)) {
+                document.getElementById('firstnameError').textContent = "First name should only contain letters.";
+                valid = false;
+            } else {
+                document.getElementById('firstnameError').textContent = "";
+            }
+
+            // Last Name validation (only alphabets)
+            const lastname = document.getElementById('lastname').value;
+            if (!/^[a-zA-Z]+$/.test(lastname)) {
+                document.getElementById('lastnameError').textContent = "Last name should only contain letters.";
+                valid = false;
+            } else {
+                document.getElementById('lastnameError').textContent = "";
+            }
+
+            // Username validation (non-empty)
+            const username = document.getElementById('username').value;
+            if (username === "") {
+                document.getElementById('usernameError').textContent = "Username is required.";
+                valid = false;
+            } else {
+                document.getElementById('usernameError').textContent = "";
+            }
+
+            // Email validation (basic email format)
+            const email = document.getElementById('email').value;
+            if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
+                document.getElementById('emailError').textContent = "Invalid email format.";
+                valid = false;
+            } else {
+                document.getElementById('emailError').textContent = "";
+            }
+
+            // Password matching validation
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = "Passwords do not match.";
+                valid = false;
+            } else {
+                document.getElementById('confirmPasswordError').textContent = "";
+            }
+
+            // Prevent form submission if not valid
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Payment Page</title>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="paymentForm" method="POST" action="payement.php">
+        <div class="row">
+            <div class="col">
+                <h3 class="title">Billing Address</h3>
+                <div class="inputBox">
+                    <span>Full Name :</span>
+                    <input type="text" id="full_name" name="full_name" placeholder="Enter your name" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Email :</span>
+                    <input type="email" id="email" name="email" placeholder="email@gmail.com" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Address :</span>
+                    <input type="text" name="address" placeholder="Enter your address" required>
+                </div>
+                <div class="inputBox">
+                    <span>City :</span>
+                    <input type="text" name="city" placeholder="Enter city name" required>
+                </div>
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>State :</span>
+                        <input type="text" id="state" name="state" placeholder="Enter state" required>
+                        <div class="error-message" id="stateError"></div>
+                    </div>
+                    <div class="inputBox">
+                        <span>Zip Code :</span>
+                        <input type="text" id="zip_code" name="zip_code" placeholder="123456" required>
+                        <div class="error-message" id="zipError"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <h3 class="title">Payment</h3>
+                <div class="inputBox">
+                    <span>Cards Accepted :</span>
+                    <img src="images/card_img.png" alt="">
+                </div>
+                <div class="inputBox">
+                    <span>Name on Card :</span>
+                    <input type="text" id="card_name" name="card_name" placeholder="Mr. XYZ" required>
+                    <div class="error-message" id="cardNameError"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Credit Card Number :</span>
+                    <input type="text" id="card_number" name="card_number" placeholder="1234567891" required>
+                    <div class="error-message" id="cardNumberError"></div>
+                </div>
+                <div class="inputBox">
+                    <span>Exp Month :</span>
+                    <input type="text" id="exp_month" name="exp_month" placeholder="Expiry month" required>
+                    <div class="error-message" id="expMonthError"></div>
+                </div>
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Exp Year :</span>
+                        <input type="number" id="exp_year" name="exp_year" placeholder="Exp year" required>
+                        <div class="error-message" id="expYearError"></div>
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" id="cvv" name="cvv" placeholder="1234" required>
+                        <div class="error-message" id="cvvError"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Proceed to Checkout" class="submit-btn">
+    </form>
+</div>
+
+<script>
+    document.getElementById('paymentForm').addEventListener('submit', function(event) {
+        // Clear previous error messages
+        let valid = true;
+
+        // Full Name validation (no numbers)
+        const fullName = document.getElementById('full_name').value;
+        const nameError = document.getElementById('nameError');
+        if (/\d/.test(fullName)) {
+            nameError.textContent = 'Full Name should not contain numbers';
+            valid = false;
+        } else {
+            nameError.textContent = '';
+        }
+
+        // Email validation (should include @domain.com)
+        const email = document.getElementById('email').value;
+        const emailError = document.getElementById('emailError');
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            emailError.textContent = 'Please enter a valid email address';
+            valid = false;
+        } else {
+            emailError.textContent = '';
+        }
+
+        // State validation (no numbers)
+        const state = document.getElementById('state').value;
+        const stateError = document.getElementById('stateError');
+        if (/\d/.test(state)) {
+            stateError.textContent = 'State should not contain numbers';
+            valid = false;
+        } else {
+            stateError.textContent = '';
+        }
+
+        // Zip Code validation (exact 6 digits)
+        const zipCode = document.getElementById('zip_code').value;
+        const zipError = document.getElementById('zipError');
+        if (!/^\d{6}$/.test(zipCode)) {
+            zipError.textContent = 'Zip Code must be exactly 6 digits';
+            valid = false;
+        } else {
+            zipError.textContent = '';
+        }
+
+        // Name on Card validation (letters and dot only)
+        const cardName = document.getElementById('card_name').value;
+        const cardNameError = document.getElementById('cardNameError');
+        if (!/^[a-zA-Z\s\.]+$/.test(cardName)) {
+            cardNameError.textContent = 'Name on card can only contain letters and "."';
+            valid = false;
+        } else {
+            cardNameError.textContent = '';
+        }
+
+        // Credit Card Number validation (exact 10 digits)
+        const cardNumber = document.getElementById('card_number').value;
+        const cardNumberError = document.getElementById('cardNumberError');
+        if (!/^\d{10}$/.test(cardNumber)) {
+            cardNumberError.textContent = 'Card Number must be exactly 10 digits';
+            valid = false;
+        } else {
+            cardNumberError.textContent = '';
+        }
+
+        // Expiry Month validation (letters only)
+        const expMonth = document.getElementById('exp_month').value;
+        const expMonthError = document.getElementById('expMonthError');
+        if (!/^[a-zA-Z]+$/.test(expMonth)) {
+            expMonthError.textContent = 'Expiry month should only contain letters';
+            valid = false;
+        } else {
+            expMonthError.textContent = '';
+        }
+
+        // Expiry Year validation (present or future year only)
+        const expYear = parseInt(document.getElementById('exp_year').value);
+        const currentYear = new Date().getFullYear();
+        const expYearError = document.getElementById('expYearError');
+        if (expYear < currentYear) {
+            expYearError.textContent = 'Expiry year is already expired';
+            valid = false;
+        } else {
+            expYearError.textContent = '';
+        }
+
+        // CVV validation (exact 4 digits)
+        const cvv = document.getElementById('cvv').value;
+        const cvvError = document.getElementById('cvvError');
+        if (!/^\d{4}$/.test(cvv)) {
+            cvvError.textContent = 'CVV must be exactly 4 digits';
+            valid = false;
+        } else {
+            cvvError.textContent = '';
+        }
+
+        // Prevent form submission if validation fails
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>

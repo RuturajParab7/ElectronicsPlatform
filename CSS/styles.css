@@ -1,0 +1,149 @@
+
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden
+}
+
+/* Navbar styling */
+.navbar {
+    background-color:black; /* Blue color */
+    padding: 10px 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.navlinks {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+}
+
+.navlinks li a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Keeps text color white */
+    font-size: 22px; /* Increases font size slightly */
+    padding: 24px; /* Adds padding around text */
+    display: inline-block; /* Ensures the link area is consistent */
+    line-height: 1; /* Adjust line height for consistency */
+}
+
+.navlinks li a:hover {
+    background-color: lightgray; /* Change background on hover */
+    color: white; /* Keeps the text color white on hover */
+}
+
+
+.ad {
+    width: 100%;
+    text-align: center;
+    
+}
+
+
+/* Advertisement styling */
+.ad {
+    width: 100%;
+    overflow: hidden; /* Ensure no overflow */
+}
+
+.ad img {
+    width: 100%; 
+    max-height: 510px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+.p_header{
+    text-align: center;
+    padding: 10px 0;
+    font-size: x-large;
+    
+}
+
+.prod_links{
+    display: flex;
+    justify-content: space-around;
+}
+
+.prod_links img {
+    
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+.prod_links img:hover {
+    transform: scale(1.05);
+}
+
+.wm_link img{
+    height: 300px;
+    width: 300px;
+}
+
+.ac_link img{
+    height: 300px;
+    width: 300px;
+}
+
+.fridge_link img{
+    height: 300px;
+    width: 300px;
+}
+
+.pLabel{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.Serv_ad img {
+    width: 100%; 
+    max-height: 550px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+.book_service{
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.book_servText{
+    font-size:xx-large;
+    font-weight: bolder;
+}
+
+.blue_line{
+    width: 50%;
+    height: 7px;
+    background-color: blue;
+    margin: 20px auto 0;
+
+}
+
+.WMPg_ad img {
+    width: 100%; 
+    max-height: 400px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+
+
+
+

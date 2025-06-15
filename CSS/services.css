@@ -1,0 +1,86 @@
+
+
+.service_container {
+    display: flex;
+    flex-wrap: wrap; /* Allows boxes to wrap into multiple lines */
+    justify-content: space-around;
+    margin: 30px auto;
+    max-width: 1300px;
+}
+
+.service_box {
+    background-color:bisque;/*antiquewhite*/
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: calc(33.333% - 20px); /* Ensures three boxes per row with margins */
+    transition: transform 0.1s; /* Correct transition syntax */
+}
+
+.service_box:hover {
+    transform: scale(1.15); /* full box zooming capacity */
+   
+}
+
+.service_link {
+    color: brown;
+    text-align: center;
+    text-decoration:none; /* underline nikalta hai text ke neche se */
+    display:block; /* Ensure the entire box is clickable */
+    padding: 15px; /* Add padding for spacing */
+}
+
+.service_img img {
+    max-width: 100%; /* Ensure images fit within their container */
+    height: 250px; /* Maintain aspect ratio */
+}
+
+
+/*index page services*/
+
+.services_container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Makes the layout responsive */
+    padding: 30px;
+    background-color: #f9f9f9; /* Light background for service section */
+}
+
+.service_category {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    margin: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centers the text */
+    transition: transform 0.2s ease-in-out;
+}
+
+.service_category:hover {
+    transform: translateY(-10px); /* Slightly lifts the box on hover */
+}
+
+.service_category h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service_category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service_category li {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #666;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+

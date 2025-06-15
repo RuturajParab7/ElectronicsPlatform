@@ -1,0 +1,251 @@
+/* Footer Styling */
+.footer {
+    background-color: #0c5ca8;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px; /* Limits the width of the content */
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%; /* Ensures container takes full width */
+    box-sizing: border-box;
+}
+
+.footer_section {
+    flex: 1;
+    min-width: 200px; /* Adjust as needed for responsiveness */
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.footer_section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer_section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_section ul li {
+    margin: 5px 0;
+}
+
+.footer_section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer_section ul li a:hover {
+    color: #f1c40f;
+}
+
+.social_links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social_links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social_icon {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.social_icon:hover {
+    color: #f1c40f;
+}
+
+.footer_bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+.footer_bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/*main css*/
+
+
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden
+}
+
+/* Navbar styling */
+.navbar {
+    background-color:blue; /* Blue color */
+    padding: 10px 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.navlinks {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+}
+
+.navlinks li a {
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Keeps text color white */
+    font-size: 22px; /* Increases font size slightly */
+    padding: 24px; /* Adds padding around text */
+    display: inline-block; /* Ensures the link area is consistent */
+    line-height: 1; /* Adjust line height for consistency */
+}
+
+.navlinks li a:hover {
+    background-color: lightgray; /* Change background on hover */
+    color: white; /* Keeps the text color white on hover */
+}
+
+.username {
+    color: white; /* Adjust color to match the rest of your navbar */
+    font-size: 22px; /* Same size as other nav links */
+    padding: 24px; /* Same padding as other links */
+    display: inline-block; /* Keep the structure same as other links */
+    line-height: 1; /* Ensure consistency in line height */
+}
+
+
+.ad {
+    width: 100%;
+    text-align: center;
+    
+}
+
+
+/* Advertisement styling */
+.ad {
+    width: 100%;
+    overflow: hidden; /* Ensure no overflow */
+}
+
+.ad img {
+    width: 100%; 
+    max-height: 510px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+.p_header{
+    text-align: center;
+    padding: 10px 0;
+    font-size: x-large;
+    
+}
+
+.prod_links{
+    display: flex;
+    justify-content: space-around;
+}
+
+.prod_links img {
+    
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+.prod_links img:hover {
+    transform: scale(1.05);
+}
+
+.wm_link img{
+    height: 300px;
+    width: 300px;
+}
+
+.ac_link img{
+    height: 300px;
+    width: 300px;
+}
+
+.fridge_link img{
+    height: 300px;
+    width: 300px;
+}
+
+.pLabel{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.Serv_ad img {
+    width: 100%; 
+    max-height: 550px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+.book_service{
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.book_servText{
+    font-size:xx-large;
+    font-weight: bolder;
+}
+
+.blue_line{
+    width: 50%;
+    height: 7px;
+    background-color: blue;
+    margin: 20px auto 0;
+
+}
+
+.WMPg_ad img {
+    width: 100%; 
+    max-height: 400px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+
+
+
+
+
+
+
+
+
